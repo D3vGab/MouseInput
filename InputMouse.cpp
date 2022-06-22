@@ -124,7 +124,7 @@ LRESULT CALLBACK WinProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 		case WM_LBUTTONDOWN:
 			mouseLB = true;
-			InvalidateRect(hwnd, NULL, TRUE);
+			//InvalidateRect(hwnd, NULL, TRUE);
 			return 0;
 
 		case WM_LBUTTONUP:
@@ -154,9 +154,10 @@ LRESULT CALLBACK WinProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 		case WM_PAINT:
 			hdc = GetDC(hwnd);
 
-			SetPixel(hdc, mouseX, mouseY, RGB(255, 0, 0));
+			if (mouseLB)
+				SetPixel(hdc, mouseX +1, mouseY +1, RGB(0, 0, 0));
 
-			ReleaseDC(hwnd, hdc);
+				ReleaseDC(hwnd, hdc);
 			return 0;
 
 		case WM_DESTROY:

@@ -1,4 +1,4 @@
-# MouseInput
+# Versão simples do Paint
 MouseInput
 
 Aplicação criada com a blibioteca *win32 do Windows*.
